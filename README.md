@@ -1,5 +1,5 @@
 ## Process CPU Usage Monitor
-A program to monitor CPU, memory, handle resource usage of processes. The program exits when some resource usage metrics exceed a specified threshold. For Windows.
+A program to monitor CPU, memory, or handle resource usage of processes. The program exits when some resource usage metrics exceed a specified threshold. For Windows.
 
 ## Use cases
 If there is some process that occasionally misbehaves and starts hogging computer resources then you can use CPU Usage Monitor tool to launch corrective actions upon detection of the occurrence of the problem. 
