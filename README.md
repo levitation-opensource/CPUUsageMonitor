@@ -38,9 +38,9 @@ Ready to use. Maintained and in active use.
 <br>-outageConditionNumChecks=3 (How many checks should fail before outage can be declared)
 <br>-passedCheckIntervalMs=10000 (How many ms to pause after a successful check)
 <br>-failedCheckIntervalMs=5000 (How many ms to pause after a failed check)
-<br>-programRegEx=\"regular expression\" (Regular expression with process name. NB! Do not include file extension .exe! If regular expression matches multiple processes then if at least one process matching the given expression exceeds the cpu usage limit then the expression is considered as failed. Multiple regular expressions can be specified. In this case the program exits only after ALL monitored regular expressions have failed.)
-<br>-failIfNoMatchingProcesses=False (Consider having no matching processes as a failure too. Failure is still declared only after outage condition counts and timeouts have passed.)
-<br>-executeCommandOnFail="" (Instead of quitting the monitor program, execute a command specified in this argument, and continue running the monitor program. To add execution arguments to this call, this argument must be the last one of the monitor arguments.)
+<br>-programRegEx=\"regular expression\" (Regular expression with process name. NB! Do not include file extension .exe! If regular expression matches multiple processes then if at least one process matching the given expression exceeds the cpu usage limit then the monitored program is considered as failed. Multiple regular expressions can be specified. In this case the program exits only after ALL monitored regular expressions have triggered.)
+<br>-failIfNoMatchingProcesses=False (Consider having no matching processes as a failure too. Failure is still declared only after outage condition repeat counts and timeouts have passed.)
+<br>-executeCommandOnFail="" (Instead of quitting the monitor program, execute a command specified in this argument, and continue running the monitor program. To add execution arguments to this call, this argument must be the last one of the CPU Usage monitor arguments.)
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-351728-28/CPUUsageMonitor/README.md?pixel)](https://github.com/igrigorik/ga-beacon)    
