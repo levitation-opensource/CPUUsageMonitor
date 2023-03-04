@@ -54,7 +54,7 @@ namespace CPUUsageMonitor
 
 
             OutputConsoleArgumentHelp(ArgProgramRegEx, "\"regular expression\"", "Regular expression with process name. NB! Do not include file extension .exe! If regular expression matches multiple processes then if at least one process matching the given expression exceeds the cpu usage limit then the monitored program is considered as failed. Multiple regular expressions can be specified. In this case the program exits only after ALL monitored regular expressions have triggered.");  //TODO: do we need to include file extension .dll ?
-            OutputConsoleArgumentHelp(ArgFailIfNoMatchingProcesses, ValueFailIfNoMatchingProcesses, "Consider having no matching processes as a failure too. Failure is still declared only after outage condition repeat counts and timeouts have passed.");
+            OutputConsoleArgumentHelp(ArgFailIfNoMatchingProcesses, ValueFailIfNoMatchingProcesses, "Consider having no matching processes as a failure too. Trigger is still activated only after outage condition repeat counts and timeouts have passed.");
             OutputConsoleArgumentHelp(ArgExecuteCommandOnFail, "\"" + ValueExecuteCommandOnFail + "\"", "Instead of quitting the monitor program, execute a command specified in this argument, and continue running the monitor program. To add execution arguments to this call, this argument must be the last one of the CPU Usage Monitor arguments.");
             //OutputConsoleArgumentHelp(ArgRestartProcessOnFail, ValueRestartProcessOnFail, "Instead of quitting the monitor program, restart the specific process that exceeded the thresholds, and continue running the monitor program.");    //TODO
 
