@@ -21,16 +21,16 @@ namespace CPUUsageMonitor
         private const string ArgShowHelp = "-help";
 
         private const string ArgFailIfNotResponding = "-failIfNotResponding";
-        private const string ArgCpuUsageTreshold = "-cpuUsageTreshold";
-        private const string ArgMemoryCommitTresholdMB = "-memoryCommitTresholdMB";
-        private const string ArgWorkingSetTresholdMB = "-workingSetTresholdMB";
-        private const string ArgGdiHandlesTreshold = "-gdiHandlesTreshold";
-        private const string ArgUserHandlesTreshold = "-userHandlesTreshold";
-        private const string ArgHandlesTreshold = "-handlesTreshold";
-        private const string ArgPagedPoolTresholdKB = "-pagedPoolTresholdKB";
-        private const string ArgNonPagedPoolTresholdKB = "-nonPagedPoolTresholdKB";
+        private const string ArgCpuUsageThreshold = "-cpuUsageThreshold";
+        private const string ArgMemoryCommitThresholdMB = "-memoryCommitThresholdMB";
+        private const string ArgWorkingSetThresholdMB = "-workingSetThresholdMB";
+        private const string ArgGdiHandlesThreshold = "-gdiHandlesThreshold";
+        private const string ArgUserHandlesThreshold = "-userHandlesThreshold";
+        private const string ArgHandlesThreshold = "-handlesThreshold";
+        private const string ArgPagedPoolThresholdKB = "-pagedPoolThresholdKB";
+        private const string ArgNonPagedPoolThresholdKB = "-nonPagedPoolThresholdKB";
 
-        private const string ArgApplyCpuUsageTresholdPerCpu = "-applyCpuUsageTresholdPerCpu";
+        private const string ArgApplyCpuUsageThresholdPerCpu = "-applyCpuUsageThresholdPerCpu";
 
         private const string ArgOutageTimeBeforeGiveUpSeconds = "-outageTimeBeforeGiveUpSeconds";
         private const string ArgOutageConditionNumChecks = "-outageConditionNumChecks";
@@ -44,8 +44,8 @@ namespace CPUUsageMonitor
 
 #if DEBUG && false
         private static bool ValueShowHelp = false;
-        private static float ValueCpuUsageTreshold = 75;
-        private static bool ValueApplyCpuUsageTresholdPerCpu = true;
+        private static float ValueCpuUsageThreshold = 75;
+        private static bool ValueApplyCpuUsageThresholdPerCpu = true;
         private static int ValueOutageTimeBeforeGiveUpSeconds = 30;
         private static int ValueOutageConditionNumChecks = 3;
         private static int ValuePassedCheckIntervalMs = 10000;
@@ -56,16 +56,16 @@ namespace CPUUsageMonitor
         private static bool ValueShowHelp = false;
 
         private static bool ValueFailIfNotResponding = true;
-        private static float? ValueCpuUsageTreshold = null; // 75;
-        private static long? ValueMemoryCommitTresholdMB = null; // IntPtr.Size == 4 ? 1024 : 3072;
-        private static long? ValueWorkingSetTresholdMB = null; // IntPtr.Size == 4 ? 1024 : 3072;
-        private static long? ValueGdiHandlesTreshold = null;
-        private static long? ValueUserHandlesTreshold = null;
-        private static long? ValueHandlesTreshold = null;
-        private static long? ValuePagedPoolTresholdKB = null;
-        private static long? ValueNonPagedPoolTresholdKB = null;
+        private static float? ValueCpuUsageThreshold = null; // 75;
+        private static long? ValueMemoryCommitThresholdMB = null; // IntPtr.Size == 4 ? 1024 : 3072;
+        private static long? ValueWorkingSetThresholdMB = null; // IntPtr.Size == 4 ? 1024 : 3072;
+        private static long? ValueGdiHandlesThreshold = null;
+        private static long? ValueUserHandlesThreshold = null;
+        private static long? ValueHandlesThreshold = null;
+        private static long? ValuePagedPoolThresholdKB = null;
+        private static long? ValueNonPagedPoolThresholdKB = null;
 
-        private static bool ValueApplyCpuUsageTresholdPerCpu = true;
+        private static bool ValueApplyCpuUsageThresholdPerCpu = true;
 
         private static int ValueOutageTimeBeforeGiveUpSeconds = 30;
         private static int ValueOutageConditionNumChecks = 3;

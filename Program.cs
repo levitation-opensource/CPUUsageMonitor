@@ -121,9 +121,9 @@ namespace CPUUsageMonitor
 
 
 
-            float? cpuUsageTreshold = ValueCpuUsageTreshold;
-            if (!ValueApplyCpuUsageTresholdPerCpu && cpuUsageTreshold.HasValue)
-                cpuUsageTreshold *= Environment.ProcessorCount;
+            float? cpuUsageThreshold = ValueCpuUsageThreshold;
+            if (!ValueApplyCpuUsageThresholdPerCpu && cpuUsageThreshold.HasValue)
+                cpuUsageThreshold *= Environment.ProcessorCount;
 
 
         startMonitoring:
@@ -147,14 +147,14 @@ namespace CPUUsageMonitor
                         ValueFailedCheckIntervalMs,
                         ValueFailIfNoMatchingProcesses,
                         ValueFailIfNotResponding,
-                        cpuUsageTreshold,
-                        ValueMemoryCommitTresholdMB,
-                        ValueWorkingSetTresholdMB,
-                        ValueGdiHandlesTreshold,
-                        ValueUserHandlesTreshold,
-                        ValueHandlesTreshold,
-                        ValuePagedPoolTresholdKB,
-                        ValueNonPagedPoolTresholdKB,
+                        cpuUsageThreshold,
+                        ValueMemoryCommitThresholdMB,
+                        ValueWorkingSetThresholdMB,
+                        ValueGdiHandlesThreshold,
+                        ValueUserHandlesThreshold,
+                        ValueHandlesThreshold,
+                        ValuePagedPoolThresholdKB,
+                        ValueNonPagedPoolThresholdKB,
                         /*checkSuccessCallback = */null
                     );
                 }
@@ -368,14 +368,14 @@ namespace CPUUsageMonitor
             int failedCheckIntervalMs, 
             bool failIfNoMatchingProcesses, 
             bool failIfNotResponding, 
-            float? cpuUsageTreshold, 
-            long? memoryCommitTresholdMB,
-            long? workingSetTresholdMB,
-            long? gdiHandlesTreshold,
-            long? userHandlesTreshold,
-            long? handlesTreshold,
-            long? pagedPoolTresholdKB,
-            long? nonPagedPoolTresholdKB,
+            float? cpuUsageThreshold, 
+            long? memoryCommitThresholdMB,
+            long? workingSetThresholdMB,
+            long? gdiHandlesThreshold,
+            long? userHandlesThreshold,
+            long? handlesThreshold,
+            long? pagedPoolThresholdKB,
+            long? nonPagedPoolThresholdKB,
             Action checkSuccessCallback
         )
         {
@@ -403,14 +403,14 @@ namespace CPUUsageMonitor
                             failedCheckIntervalMs,
                             failIfNoMatchingProcesses,
                             failIfNotResponding,
-                            cpuUsageTreshold,
-                            memoryCommitTresholdMB,
-                            workingSetTresholdMB,
-                            gdiHandlesTreshold,
-                            userHandlesTreshold,
-                            handlesTreshold,
-                            pagedPoolTresholdKB,
-                            nonPagedPoolTresholdKB,
+                            cpuUsageThreshold,
+                            memoryCommitThresholdMB,
+                            workingSetThresholdMB,
+                            gdiHandlesThreshold,
+                            userHandlesThreshold,
+                            handlesThreshold,
+                            pagedPoolThresholdKB,
+                            nonPagedPoolThresholdKB,
                             () =>
                             {
                                 //Debugger.Break();
@@ -552,14 +552,14 @@ namespace CPUUsageMonitor
             int failedCheckIntervalMs, 
             bool failIfNoMatchingProcesses, 
             bool failIfNotResponding, 
-            float? cpuUsageTreshold, 
-            long? memoryCommitTresholdMB,
-            long? workingSetTresholdMB,
-            long? gdiHandlesTreshold,
-            long? userHandlesTreshold,
-            long? handlesTreshold,
-            long? pagedPoolTresholdKB,
-            long? nonPagedPoolTresholdKB,
+            float? cpuUsageThreshold, 
+            long? memoryCommitThresholdMB,
+            long? workingSetThresholdMB,
+            long? gdiHandlesThreshold,
+            long? userHandlesThreshold,
+            long? handlesThreshold,
+            long? pagedPoolThresholdKB,
+            long? nonPagedPoolThresholdKB,
             Action checkSuccessCallback
         )
         {
@@ -574,14 +574,14 @@ namespace CPUUsageMonitor
                     failedCheckIntervalMs,
                     failIfNoMatchingProcesses,
                     failIfNotResponding,
-                    cpuUsageTreshold,
-                    memoryCommitTresholdMB,
-                    workingSetTresholdMB,
-                    gdiHandlesTreshold,
-                    userHandlesTreshold,
-                    handlesTreshold,
-                    pagedPoolTresholdKB,
-                    nonPagedPoolTresholdKB,
+                    cpuUsageThreshold,
+                    memoryCommitThresholdMB,
+                    workingSetThresholdMB,
+                    gdiHandlesThreshold,
+                    userHandlesThreshold,
+                    handlesThreshold,
+                    pagedPoolThresholdKB,
+                    nonPagedPoolThresholdKB,
                     () => 
                     {
                         if (outer_outageState)    //NB! propagate the success message only when the outage was started
@@ -639,14 +639,14 @@ namespace CPUUsageMonitor
             int failedCheckIntervalMs, 
             bool failIfNoMatchingProcesses, 
             bool failIfNotResponding, 
-            float? cpuUsageTreshold, 
-            long? memoryCommitTresholdMB,
-            long? workingSetTresholdMB,
-            long? gdiHandlesTreshold,
-            long? userHandlesTreshold,
-            long? handlesTreshold,
-            long? pagedPoolTresholdKB,
-            long? nonPagedPoolTresholdKB,
+            float? cpuUsageThreshold, 
+            long? memoryCommitThresholdMB,
+            long? workingSetThresholdMB,
+            long? gdiHandlesThreshold,
+            long? userHandlesThreshold,
+            long? handlesThreshold,
+            long? pagedPoolThresholdKB,
+            long? nonPagedPoolThresholdKB,
             Action checkSuccessCallback
         )
         {
@@ -657,7 +657,7 @@ namespace CPUUsageMonitor
             int last_expectedTimeDiffMs = 0;
             do
             {
-                //success = base.CheckHost(cpuUsageTreshold);
+                //success = base.CheckHost(cpuUsageThreshold);
                 long? memoryCommitMB;
                 long? workingSetMB;
                 long? gdiHandles;
@@ -694,21 +694,21 @@ namespace CPUUsageMonitor
                 else if (notResponding)
                     success = false;
 
-                else if (cpu_usage.HasValue && cpuUsageTreshold.HasValue && cpu_usage >= cpuUsageTreshold)
+                else if (cpu_usage.HasValue && cpuUsageThreshold.HasValue && cpu_usage >= cpuUsageThreshold)
                     success = false;
-                else if (memoryCommitMB.HasValue && memoryCommitTresholdMB.HasValue && memoryCommitMB >= workingSetTresholdMB)
+                else if (memoryCommitMB.HasValue && memoryCommitThresholdMB.HasValue && memoryCommitMB >= workingSetThresholdMB)
                     success = false;
-                else if (workingSetMB.HasValue && workingSetTresholdMB.HasValue && workingSetMB >= workingSetTresholdMB)
+                else if (workingSetMB.HasValue && workingSetThresholdMB.HasValue && workingSetMB >= workingSetThresholdMB)
                     success = false;
-                else if (gdiHandles.HasValue && gdiHandlesTreshold.HasValue && gdiHandles >= gdiHandlesTreshold)
+                else if (gdiHandles.HasValue && gdiHandlesThreshold.HasValue && gdiHandles >= gdiHandlesThreshold)
                     success = false;
-                else if (userHandles.HasValue && userHandlesTreshold.HasValue && userHandles >= userHandlesTreshold)
+                else if (userHandles.HasValue && userHandlesThreshold.HasValue && userHandles >= userHandlesThreshold)
                     success = false;
-                else if (handles.HasValue && handlesTreshold.HasValue && handles >= handlesTreshold)
+                else if (handles.HasValue && handlesThreshold.HasValue && handles >= handlesThreshold)
                     success = false;
-                else if (pagedPoolKB.HasValue && pagedPoolTresholdKB.HasValue && pagedPoolKB >= pagedPoolTresholdKB)
+                else if (pagedPoolKB.HasValue && pagedPoolThresholdKB.HasValue && pagedPoolKB >= pagedPoolThresholdKB)
                     success = false;
-                else if (nonPagedPoolKB.HasValue && nonPagedPoolTresholdKB.HasValue && nonPagedPoolKB >= nonPagedPoolTresholdKB)
+                else if (nonPagedPoolKB.HasValue && nonPagedPoolThresholdKB.HasValue && nonPagedPoolKB >= nonPagedPoolThresholdKB)
                     success = false;
 
 

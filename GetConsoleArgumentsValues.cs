@@ -68,42 +68,42 @@ namespace CPUUsageMonitor
                         GetConsoleArgumentValue2(t, ref ValueFailIfNotResponding);
                         break;
 
-                    case ArgCpuUsageTreshold:
-                        GetConsoleArgumentValue2(t, ref ValueCpuUsageTreshold);
+                    case ArgCpuUsageThreshold:
+                        GetConsoleArgumentValue2(t, ref ValueCpuUsageThreshold);
                         break;
 
-                    case ArgMemoryCommitTresholdMB:
-                        GetConsoleArgumentValue2(t, ref ValueMemoryCommitTresholdMB);
+                    case ArgMemoryCommitThresholdMB:
+                        GetConsoleArgumentValue2(t, ref ValueMemoryCommitThresholdMB);
                         break;
 
-                    case ArgWorkingSetTresholdMB:
-                        GetConsoleArgumentValue2(t, ref ValueWorkingSetTresholdMB);
+                    case ArgWorkingSetThresholdMB:
+                        GetConsoleArgumentValue2(t, ref ValueWorkingSetThresholdMB);
                         break;
 
-                    case ArgGdiHandlesTreshold:
-                        GetConsoleArgumentValue2(t, ref ValueGdiHandlesTreshold);
+                    case ArgGdiHandlesThreshold:
+                        GetConsoleArgumentValue2(t, ref ValueGdiHandlesThreshold);
                         break;
 
-                    case ArgUserHandlesTreshold:
-                        GetConsoleArgumentValue2(t, ref ValueUserHandlesTreshold);
+                    case ArgUserHandlesThreshold:
+                        GetConsoleArgumentValue2(t, ref ValueUserHandlesThreshold);
                         break;
 
-                    case ArgHandlesTreshold:
-                        GetConsoleArgumentValue2(t, ref ValueHandlesTreshold);
+                    case ArgHandlesThreshold:
+                        GetConsoleArgumentValue2(t, ref ValueHandlesThreshold);
                         break;
 
-                    case ArgPagedPoolTresholdKB:
-                        GetConsoleArgumentValue2(t, ref ValuePagedPoolTresholdKB);
+                    case ArgPagedPoolThresholdKB:
+                        GetConsoleArgumentValue2(t, ref ValuePagedPoolThresholdKB);
                         break;
 
-                    case ArgNonPagedPoolTresholdKB:
-                        GetConsoleArgumentValue2(t, ref ValueNonPagedPoolTresholdKB);
+                    case ArgNonPagedPoolThresholdKB:
+                        GetConsoleArgumentValue2(t, ref ValueNonPagedPoolThresholdKB);
                         break;
 
 
 
-                    case ArgApplyCpuUsageTresholdPerCpu:
-                        GetConsoleArgumentValue2(t, ref ValueApplyCpuUsageTresholdPerCpu);
+                    case ArgApplyCpuUsageThresholdPerCpu:
+                        GetConsoleArgumentValue2(t, ref ValueApplyCpuUsageThresholdPerCpu);
                         break;
 
 
