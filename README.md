@@ -1,5 +1,5 @@
 ## Process CPU Usage Monitor
-A program to monitor CPU, memory, or handle resource usage of processes. The program exits when some resource usage metrics exceed a specified thhreshold. For Windows.
+A program to monitor CPU, memory, or handle resource usage of processes. The program exits when some resource usage metrics exceed a specified threshold. For Windows.
 
 ## Use cases
 If there is some process that occasionally misbehaves and starts hogging computer resources then you can use CPU Usage Monitor tool to launch corrective actions upon detection of the occurrence of the problem. 
@@ -17,7 +17,7 @@ Example batch file content:
 	sleep 1
 	goto s
 
-The above example monitors two resource usage metrics of a process called "YourProblematicExecutableName". Once ANY of the CPU usage percent metric, handle usage count metric, or the committed memory usage metric exceed the corresponding threshold, the process will be killed by the next command in the batch file. By default the trigger activates (that is, CPU Usage Monitor quits) when some of the thhresholds is exceeded for 3 consequtive checks with 5 second intervals, and then the resource usage violation continues for another 30 seconds after that. If the monitored process resumes normal resource usage during that additional time interval then the trigger is reset and CPU Usage Monitor continues running without quitting.
+The above example monitors two resource usage metrics of a process called "YourProblematicExecutableName". Once ANY of the CPU usage percent metric, handle usage count metric, or the committed memory usage metric exceed the corresponding threshold, the process will be killed by the next command in the batch file. By default the trigger activates (that is, CPU Usage Monitor quits) when some of the thresholds is exceeded for 3 consequtive checks with 5 second intervals, and then the resource usage violation continues for another 30 seconds after that. If the monitored process resumes normal resource usage during that additional time interval then the trigger is reset and CPU Usage Monitor continues running without quitting.
 
 ### State
 Ready to use. Maintained and in active use.
