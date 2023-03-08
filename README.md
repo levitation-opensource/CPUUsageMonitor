@@ -14,7 +14,8 @@ Example batch file content:
 	:s
 	CPUUsageMonitor.exe -cpuUsageThreshold=90 -handlesThreshold=75000 -memoryCommitThresholdMB=1024 -programRegEx="YourProblematicExecutableName"
 	pskill.exe "YourProblematicExecutableName"
-	sleep 1
+	ping -n 2 127.0.0.1
+	REM sleep 1
 	goto s
 
 The above example monitors two resource usage metrics of a process called "YourProblematicExecutableName". Once ANY of the CPU usage percent metric, handle usage count metric, or the committed memory usage metric exceed the corresponding threshold, the process will be killed by the next command in the batch file. By default the trigger activates (that is, CPU Usage Monitor quits) when some of the thresholds is exceeded for 3 consequtive checks with 5 second intervals, and then the resource usage violation continues for another 30 seconds after that. If the monitored process resumes normal resource usage during that additional time interval then the trigger is reset and CPU Usage Monitor continues running without quitting.
